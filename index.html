@@ -1,0 +1,54 @@
+const facts = [
+    {
+        "fact": "Vending Machines Galore",
+        "description": "Japan has one of the highest densities of vending machines in the world, with over 5 million machines offering everything from drinks and snacks to umbrellas and even hot meals."
+    },
+    {
+        "fact": "Unique Kit Kat Flavors",
+        "description": "Japan is famous for its wide variety of Kit Kat flavors, including wasabi, sweet potato, and even sake. The name 'Kit Kat' sounds like 'kitto katsu,' a Japanese phrase meaning 'surely win,' making it a popular good luck charm for students."
+    },
+    {
+        "fact": "Capsule Hotels",
+        "description": "Japan is known for its innovative capsule hotels, which offer small, pod-like accommodations for travelers looking for a budget-friendly and unique lodging experience."
+    },
+    {
+        "fact": "Cherry Blossom Festivals",
+        "description": "Every spring, Japan celebrates the blooming of cherry blossoms (sakura) with hanami, or flower-viewing parties, where people gather to enjoy the beautiful pink flowers."
+    },
+    {
+        "fact": "High-Tech Toilets",
+        "description": "Japanese toilets are famous for their advanced features, including heated seats, bidet functions, and even music to ensure privacy."
+    },
+    {
+        "fact": "Sumo Wrestling",
+        "description": "Sumo is Japan's national sport, with a history dating back over 1,500 years. Sumo wrestlers, known as rikishi, follow a strict lifestyle and diet to maintain their size and strength."
+    },
+    {
+        "fact": "Shinto Shrines and Buddhist Temples",
+        "description": "Japan is home to thousands of Shinto shrines and Buddhist temples, each with its own unique architecture and history. These sites are often visited for spiritual reasons and cultural appreciation."
+    },
+    {
+        "fact": "Anime and Manga",
+        "description": "Japan is the birthplace of anime and manga, which have become popular worldwide. The country hosts numerous conventions and events celebrating these art forms."
+    },
+    {
+        "fact": "Bullet Trains",
+        "description": "Japan's Shinkansen, or bullet trains, are known for their speed, punctuality, and safety. They can reach speeds of up to 320 km/h (199 mph) and are a popular mode of transportation for both locals and tourists."
+    },
+    {
+        "fact": "Mount Fuji",
+        "description": "Mount Fuji is Japan's highest peak and an iconic symbol of the country. It is a popular destination for hikers and sightseers, especially during the climbing season from July to September."
+    }
+];
+
+document.getElementById('factButton').addEventListener('click', () => {
+    const randomIndex = Math.floor(Math.random() * facts.length);
+    const fact = facts[randomIndex];
+    document.getElementById('factDisplay').innerText = `${fact.fact}: ${fact.description}`;
+});
+
+document.getElementById('twitterButton').addEventListener('click', () => {
+    const factText = document.getElementById('factDisplay').innerText;
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(factText)}`;
+    window.open(twitterUrl, '_blank');
+});
